@@ -2,10 +2,61 @@
 //
 
 #include <iostream>
+//int ChCount = 0;
+//While(Arr[ChCount])
+//{
+//    char printch = Arr[ChCount];
+//    putchar(PrintCh);
+//    ++ChChount;
+//}
+int StringCount(char* Arr)
+{
+    int ChCount = 0;
+
+    while (Arr[ChCount])
+    {
+        ++ChCount;
+    }
+
+    return ChCount;
+}
+
+void ChangeCh(char* _Arr, char _PrevCh, char _NextCh)
+{
+    for (int i = 0; _Arr[i] != '0'; ++i)
+    {
+        if (_Arr[i] == _PrevCh)
+        {
+            _Arr[i] = _NextCh;
+        }
+    }
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    // 한글 들어가지 않습니다.
+    {
+        char Arr[100] = "312312321";
+
+        //글짜 수를 세는 함수
+        int Result = StringCount(Arr);
+
+        std::cout << "글짜 수: " << Result << "\n";
+        int a = 0;
+    }
+
+    {
+        char Arr[100] = "aaa bbb ccc";
+
+        Arr[0] = 'a';
+        // "aaa bbb ccc"; => "aaa bbb ddd";
+        ChangeCh(Arr, 'c', 'd');
+        std::cout << "변경 후: " << Arr;
+
+        int a = 0;
+    }
+
+
 }
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
