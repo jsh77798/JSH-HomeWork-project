@@ -85,8 +85,7 @@ void StrCopy(const char* const _Left, char* _Right)
 // 가장 어려운 숙제
 void NumberToString(int _Number, char* _Right)
 {
-    int ch = 0;
-    char* _Right = &ch;
+    
 
 
 
