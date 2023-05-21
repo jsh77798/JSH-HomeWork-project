@@ -10,42 +10,42 @@
 //}
 
 int ChCount(const char* const _string, char Ch)
+
 {
-    int ChCount = 0;
+    
     int Count = 0;
-        int i = 0;
-            while (_string[i]!=0)
+    const char* Text = _string;
+            while (*Text !='\0')
             {
-                ++ChCount;
-                if (_string[i] && 'a')
+                
+                if (*Text == Ch)
                 {
                     ++Count;
                 }
-                else
-                {
-                    i++;
-                }
+                ++Text;
             }
-            ChCount = ChCount - Count;
+          
     
     // for문을 돌리는건 당연한거야.
 
     // Ch와 같은 문자가 몇개들어있는지 세어서 리턴해주는 함수
-    return ChCount;
+    return Count;
 }
 
 void TrimDelete(char* _string)
 {
-    char Ch = 'a';
-    ' ';
+    char Ch = ' ' ;
+    
 
-    //while ()
-    //{
-    if (Ch == ' ')
+    while (_string != '\0')
     {
-        int a = 0;
+      if (Ch == ' ')
+      {
+        
+      }
+
+      ++_string;
     }
-    //}
 
 
     return;
@@ -73,10 +73,10 @@ int main()
 {
     
     {
-        // a의 갯수를 구한다
+        // a의 개수를 구한다
         // 4가 리턴되어야 합니다.
         // 문자열의 마지막에 들어가는 0은 글자로 치지 않습니다.
-        int Result = ChCount("ab aaa ccc ddd eee", 'w'); 
+        int Result = ChCount("ab aaa ccc ddd eee", 'a'); 
         std::cout << "a의 총개수: " << Result << "\n";
     }
 
@@ -87,10 +87,11 @@ int main()
         // 띄어쓰기를 없애라
         // Arr "aabcddee"
         int a = 0;
+
     }
 
     {
-        // 수의 갯수를 구해라
+        // 수의 개수를 구해라
         // 8이 리턴되게 만들어라.
         int Result = DigitsCount(12367867);
 
