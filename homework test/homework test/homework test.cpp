@@ -1,13 +1,4 @@
-﻿// homework test.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
-//
-
-#include <iostream>
-
-
-
-
-
-
+﻿
 
 #include <iostream>
 void NumberToString(int _Number, char* _Right)
@@ -15,10 +6,10 @@ void NumberToString(int _Number, char* _Right)
     int index = 0;
     while (_Number != 0)
     {
-        int digit = _Number % 10; // 가장 오른쪽 자릿수 추출
+        int remain = _Number % 10; // 가장 오른쪽 자릿수 추출
         _Number /= 10; // 다음 자릿수로 이동
         // 문자열에 숫자를 문자로 변환하여 저장
-        *(_Right + index) = static_cast<char>(digit + '0');
+        (_Right + index) = static_cast<char>(remain + '0');
         index++;
     }
 
