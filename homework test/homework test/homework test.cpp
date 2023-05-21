@@ -3,38 +3,43 @@
 
 #include <iostream>
 
-int TrimDelete(char* _string)
+void TrimDelete(char* _string)
 {
     char Ch = ' ';
-    char Result = 0;
-    const char* check = _string;
+    
+    char* check = _string;
+    const char* check2 = _string;
 
-    while (*check != '\0')
+    while (*check2 != '\0')
     {
-        if (*check == Ch)
+        if (*check2 != Ch)
         {
-            Result = *_string - ' ';
+            *check = *check2;
+            ++check;
         }
-        ++check;
+        ++check2;
     }
+    *check = '\0';
 
-
-    return Result;
+    
 }
 
 int main()
 {
     {
         char Arr[256] = "aa  b  c dd ee";
-        int result = TrimDelete(Arr);
-        std::cout << "정답은: " << result << "\n";
+        TrimDelete(Arr);
+        std::cout << "정답은: " << Arr<< "\n";
         
         // 띄어쓰기를 없애라
         // Arr "aabcddee"
-        int a = 0;
-
+        
+        return 0;
     }
 }
+
+
+
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
 // 프로그램 디버그: <F5> 키 또는 [디버그] > [디버깅 시작] 메뉴

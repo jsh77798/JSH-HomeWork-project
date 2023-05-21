@@ -1,3 +1,2 @@
 ﻿  HomeWork0519.cpp
-C:\Project homework\JSH-HomeWork-project\HomeWork\HomeWork0519\HomeWork0519.cpp(40,20): error C2446: '!=': 'int'에서 'char *'(으)로 변환되지 않았습니다.
-C:\Project homework\JSH-HomeWork-project\HomeWork\HomeWork0519\HomeWork0519.cpp(40,23): message : 정수 계열 형식에서 포인터 형식으로 변환하려면 reinterpret_cast, C 스타일 캐스트 또는 괄호가 있는 함수 스타일 캐스트가 필요합니다.
+  HomeWork0519.vcxproj -> C:\Project homework\JSH-HomeWork-project\HomeWork\x64\Debug\HomeWork0519.exe

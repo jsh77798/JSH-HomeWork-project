@@ -34,27 +34,40 @@ int ChCount(const char* const _string, char Ch)
 
 void TrimDelete(char* _string)
 {
-    char Ch = ' ' ;
-    
+    char Ch = ' ';
 
-    while (_string != '\0')
+    char* check = _string;
+    const char* check2 = _string;
+
+    while (*check2 != '\0')
     {
-      if (Ch == ' ')
-      {
-        
-      }
-
-      ++_string;
+        if (*check2 != Ch)
+        {
+            *check = *check2;
+            ++check;
+        }
+        ++check2;
     }
+    *check = '\0';
 
-
-    return;
 }
 
 
 int DigitsCount(int _Number)
 {
-    return 0;
+    int Count = 0;
+    
+    int* Num = &_Number;
+    while (*Num !=0)
+    {
+
+        ++Count;
+        ++Num;
+    }
+
+    return Count;
+    
+    
 }
 
 void StrCopy(const char* const _Left, char* _Right)
@@ -77,16 +90,17 @@ int main()
         // 4가 리턴되어야 합니다.
         // 문자열의 마지막에 들어가는 0은 글자로 치지 않습니다.
         int Result = ChCount("ab aaa ccc ddd eee", 'a'); 
-        std::cout << "a의 총개수: " << Result << "\n";
+        std::cout << "1. a의 총개수: " << Result << "\n";
     }
 
     {
         char Arr[256] = "aa  b  c dd ee";
 
         TrimDelete(Arr);
+        std::cout << "2. 정답은: " << Arr << "\n";
         // 띄어쓰기를 없애라
         // Arr "aabcddee"
-        int a = 0;
+        
 
     }
 
@@ -94,7 +108,7 @@ int main()
         // 수의 개수를 구해라
         // 8이 리턴되게 만들어라.
         int Result = DigitsCount(12367867);
-
+        std::cout << "3. 수의 개수: " << Result << "\n";
         int a = 0;
     }
 
