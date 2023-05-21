@@ -57,12 +57,12 @@ int DigitsCount(int _Number)
 {
     int Count = 0;
     
-    int* Num = &_Number;
-    while (*Num !=0)
+    
+    while (_Number !=0)
     {
-
+        _Number /= 10;
         ++Count;
-        ++Num;
+        
     }
 
     return Count;
@@ -72,6 +72,13 @@ int DigitsCount(int _Number)
 
 void StrCopy(const char* const _Left, char* _Right)
 {
+    int i = 0;
+    while (_Left[i] != '\0')
+    {
+        _Right[i] = _Left[i];
+            ++i;
+    }
+
     return;
 }
 
@@ -117,7 +124,7 @@ int main()
         char ArrCopyText[256] = {};
 
         StrCopy("aaaa bbb ccc", ArrCopyText);
-
+        std::cout << "4. ArrCopyText== " << ArrCopyText << "\n";
         int a = 0;
     }
 
