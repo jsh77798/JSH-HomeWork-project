@@ -3,42 +3,60 @@
 
 #include <iostream>
 
-void TrimDelete(char* _string)
+
+
+
+
+
+
+#include <iostream>
+void NumberToString(int _Number, char* _Right)
 {
-    char Ch = ' ';
-    
-    char* check = _string;
-    const char* check2 = _string;
-
-    while (*check2 != '\0')
+    int index = 0;
+    while (_Number != 0)
     {
-        if (*check2 != Ch)
-        {
-            *check = *check2;
-            ++check;
-        }
-        ++check2;
+        int digit = _Number % 10; // 가장 오른쪽 자릿수 추출
+        _Number /= 10; // 다음 자릿수로 이동
+        // 문자열에 숫자를 문자로 변환하여 저장
+        *(_Right + index) = static_cast<char>(digit + '0');
+        index++;
     }
-    *check = '\0';
 
-    
+    // 문자열을 역순으로 뒤집기
+    int length = index;
+    for (int i = 0; i < length / 2; i++)
+    {
+        char temp = *(_Right + i);
+        *(_Right + i) = *(_Right + length - i - 1);
+        *(_Right + length - i - 1) = temp;
+    }
+
+    // 문자열 끝에 null 문자('\0') 추가
+    *(_Right + index) = '\0';
+
+
+    return;
 }
 
 int main()
 {
-    {
-        char Arr[256] = "aa  b  c dd ee";
-        TrimDelete(Arr);
-        std::cout << "정답은: " << Arr<< "\n";
-        
-        // 띄어쓰기를 없애라
-        // Arr "aabcddee"
-        
-        return 0;
-    }
+    char Result[256] = {};
+    // 아래 Result 값으로 바꿔라
+    // Result = "312312";
+
+    NumberToString(312312, Result);
+
+    char Ch = '0';
+
+    int Value = 7;
+
+    char ChConvert = Value + 48;
+
+    std::cout << "5. 정답은: " << Result << "\n";
+    int a = 0;
 }
 
-
+//앞의 코드를 활용하여 Result를 "312312" 값으로 바꾸는 코드를 만들어줘
 
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴

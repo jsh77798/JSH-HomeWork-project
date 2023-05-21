@@ -85,6 +85,12 @@ void StrCopy(const char* const _Left, char* _Right)
 // 가장 어려운 숙제
 void NumberToString(int _Number, char* _Right)
 {
+    int ch = 0;
+    char* _Right = &ch;
+
+
+
+
     return;
 }
 
@@ -141,6 +147,7 @@ int main()
 
         char ChConvert = Value + 48;
 
+        std::cout << "5. 정답은: " << Result << "\n";
         int a = 0;
     }
 
