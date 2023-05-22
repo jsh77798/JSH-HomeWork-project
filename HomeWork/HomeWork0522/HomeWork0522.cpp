@@ -47,6 +47,7 @@ void DamagePrint(const char* const _AttName, const char* const _DefName, int _At
 void Damage(int& _Hp, int _Att)
 {
     _Hp -= _Att;
+    
 }
 
 // 내일꼭 break continue
@@ -62,8 +63,8 @@ int main()
     // 플레이어가 몬스터를 때린다.
     // => 컴퓨터가 보면 그냥 int나 2개 내놔.
 
-    int PlayerHp = 200;
-    int PlayerAtt = 100;
+    int PlayerHp = 100;
+    int PlayerAtt = 50;
     char PlayerName[40] = "fasdhjkfasdhjkfasdhjfklasdhjkfasdhjfk";
 
     int MonsterHp = 100;
@@ -79,26 +80,47 @@ int main()
         StatusRender(PlayerName, PlayerAtt, PlayerHp);
         StatusRender(MonsterName, MonsterAtt, MonsterHp);
 
-        _getch();
 
+
+
+        _getch();
         // 아무키나 입력할때까지 기다리는 함수
 
         DamagePrint(PlayerName, MonsterName, PlayerAtt);
         Damage(MonsterHp, PlayerAtt);
         // MonsterHp -= PlayerAtt;
+        
+        
+
 
         _getch();
+        
 
         DamagePrint(MonsterName, PlayerName, MonsterAtt);
         Damage(PlayerHp, MonsterAtt);
 
+
+
+
         _getch();
+        
+        
 
-        //if (조건 만족시)
-        //{
-        //    return;
-        //}
 
+
+        if (PlayerHp == 0)
+        {
+            return 0;
+        }
+
+        if (MonsterHp == 0)
+        {
+            return 0;
+        }
+
+       
 
     }
+    
+
 }
