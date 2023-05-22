@@ -85,6 +85,9 @@ void StrCopy(const char* const _Left, char* _Right)
 // 가장 어려운 숙제
 void NumberToString(int _Number, char* _Right)
 {
+    //오답노트
+    //  선생님 정답
+
     if (_Number == 0)
     {
         _Right[0] = '0';
