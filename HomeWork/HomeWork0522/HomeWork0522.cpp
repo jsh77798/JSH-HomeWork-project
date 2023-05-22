@@ -64,7 +64,7 @@ int main()
     // => 컴퓨터가 보면 그냥 int나 2개 내놔.
 
     int PlayerHp = 100;
-    int PlayerAtt = 50;
+    int PlayerAtt = 25;
     char PlayerName[40] = "fasdhjkfasdhjkfasdhjfklasdhjkfasdhjfk";
 
     int MonsterHp = 100;
@@ -73,24 +73,37 @@ int main()
 
     while (true)
     {
-        // 콘솔창을 모조리 지우는 함수
-        system("cls");
+        if (MonsterHp==100)
+        {
 
-        // 한번에 함수로 만든것이고
-        StatusRender(PlayerName, PlayerAtt, PlayerHp);
-        StatusRender(MonsterName, MonsterAtt, MonsterHp);
+            // 콘솔창을 모조리 지우는 함수
+            system("cls");
+
+            // 한번에 함수로 만든것이고
+            StatusRender(PlayerName, PlayerAtt, PlayerHp);
+            StatusRender(MonsterName, MonsterAtt, MonsterHp);
+            _getch();
+            // 아무키나 입력할때까지 기다리는 함수
+
+        }
 
 
-
-
-        _getch();
-        // 아무키나 입력할때까지 기다리는 함수
+        
 
         DamagePrint(PlayerName, MonsterName, PlayerAtt);
         Damage(MonsterHp, PlayerAtt);
         // MonsterHp -= PlayerAtt;
-        
-        
+        system("cls");
+
+        StatusRender(PlayerName, PlayerAtt, PlayerHp);
+        StatusRender(MonsterName, MonsterAtt, MonsterHp);
+        DamagePrint(PlayerName, MonsterName, PlayerAtt);
+        if (MonsterHp == 0)
+        {
+            return 0;
+        }
+
+
 
 
         _getch();
@@ -98,27 +111,21 @@ int main()
 
         DamagePrint(MonsterName, PlayerName, MonsterAtt);
         Damage(PlayerHp, MonsterAtt);
+        system("cls");
 
-
-
-
-        _getch();
-        
-        
-
-
-
+        StatusRender(PlayerName, PlayerAtt, PlayerHp);
+        StatusRender(MonsterName, MonsterAtt, MonsterHp);
+        DamagePrint(MonsterName, PlayerName, MonsterAtt);
         if (PlayerHp == 0)
         {
             return 0;
         }
 
-        if (MonsterHp == 0)
-        {
-            return 0;
-        }
 
-       
+
+        _getch();
+        
+
 
     }
     
