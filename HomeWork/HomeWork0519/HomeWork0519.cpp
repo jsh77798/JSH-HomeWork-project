@@ -85,12 +85,38 @@ void StrCopy(const char* const _Left, char* _Right)
 // 가장 어려운 숙제
 void NumberToString(int _Number, char* _Right)
 {
+    if (_Number == 0)
+    {
+        _Right[0] = '0';
+        return;
+    }
+
+    // _Number => ''
+
+    int Count = DigitsCount(_Number);
+
+    for (size_t i = 0; i < Count; i++)
+    {
+        // 312312의 10으로 나눴을때 나머지는?
+
+        
+        int Value = _Number % 10;
+
+        _Right[Count - i - 1] = Value + '0';
+
+        _Number = _Number / 10;
+
+
+        int a = 0;
+    }
+
+    // return _Right;
     
 
 
 
 
-    return;
+    
 }
 
 

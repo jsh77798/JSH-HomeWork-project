@@ -9,11 +9,11 @@
 //    putchar(PrintCh);
 //    ++ChChount;
 //}
-int StringCount(char* Arr)
+int StringCount(char* _Arr)
 {
     int ChCount = 0;
 
-    while (Arr[ChCount])
+    while (_Arr[ChCount])
     {
         ++ChCount;
     }
@@ -23,6 +23,12 @@ int StringCount(char* Arr)
 
 void ChangeCh(char* _Arr, char _PrevCh, char _NextCh)
 {
+    if (nullptr == _Arr)
+    {
+        return;
+    }
+
+
     for (int i = 0; _Arr[i] != '0'; ++i)
     {
         if (_Arr[i] == _PrevCh)
