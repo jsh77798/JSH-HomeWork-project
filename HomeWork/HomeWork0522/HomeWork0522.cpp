@@ -32,10 +32,13 @@ void StatusRender(const char* const _Name, int _Att, int _Hp)
     // 40개로 맞춰오세요.
 
     // 줄바꿈이 안되고 있습니다.
-    printf_s("%s--------------------------\n", _Name);
+   
+    char NameLine[40] = "%s------------------------------------\n";
+    char TextLine[42] = "----------------------------------------\n";
+    printf_s(NameLine, _Name);
     printf_s("공격력 : %d\n", _Att);
     printf_s("체  력 : %d\n", _Hp);
-    printf_s("--------------------------\n");
+    printf_s(TextLine);
 }
 
 void DamagePrint(const char* const _AttName, const char* const _DefName, int _Att)
@@ -82,9 +85,10 @@ int main()
             // 한번에 함수로 만든것이고
             StatusRender(PlayerName, PlayerAtt, PlayerHp);
             StatusRender(MonsterName, MonsterAtt, MonsterHp);
-            _getch();
-            // 아무키나 입력할때까지 기다리는 함수
-
+            
+            
+            
+            _getch();  // 아무키나 입력할때까지 기다리는 함수
         }
 
 
@@ -102,7 +106,6 @@ int main()
         {
             return 0;
         }
-
 
 
 
