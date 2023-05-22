@@ -26,19 +26,43 @@ class Player
 // 한명이 죽으면 끝납니다.
 // 지금 그걸 그래픽으로 표현할 방법이 없으니까.
 // 글자로 표현하겠습니다.
+void PrintLine(const char* line, int maxLength)
+{
+    int lineLength = 0;
+    while (line[lineLength] != '\0')
+        ++lineLength;
+
+    if (lineLength <= maxLength)
+    {
+        printf("%s", line);
+        for (int i = 0; i < maxLength - lineLength; ++i)
+            printf(" ");
+        printf("\n");
+    }
+    else
+    {
+        for (int i = 0; i < maxLength; ++i)
+            printf("%c", line[i]);
+        printf("\n");
+    }
+}
 
 void StatusRender(const char* const _Name, int _Att, int _Hp)
 {
     // 40개로 맞춰오세요.
 
     // 줄바꿈이 안되고 있습니다.
-   
-    char NameLine[40] = "%s------------------------------------\n";
-    char TextLine[42] = "----------------------------------------\n";
-    printf_s(NameLine, _Name);
-    printf_s("공격력 : %d\n", _Att);
-    printf_s("체  력 : %d\n", _Hp);
-    printf_s(TextLine);
+
+    const char separator[] = "----------------------------------------";
+    int maxLength = sizeof(separator) - 1;
+
+    PrintLine(_Name, maxLength);
+    printf("%s\n", separator);
+    printf("공격력 : %d\n", _Att);
+    printf("체  력 : %d\n", _Hp);
+    printf("%s\n", separator);
+    printf("\n");
+    
 }
 
 void DamagePrint(const char* const _AttName, const char* const _DefName, int _Att)
@@ -68,11 +92,11 @@ int main()
 
     int PlayerHp = 100;
     int PlayerAtt = 25;
-    char PlayerName[40] = "fasdhjkfasdhjkfasdhjfklasdhjkfasdhjfk";
+    char PlayerName[] = "Player";
 
     int MonsterHp = 100;
     int MonsterAtt = 10;
-    char MonsterName[40] = "Monster";
+    char MonsterName[] = "Monster";
 
     while (true)
     {
@@ -104,9 +128,10 @@ int main()
         DamagePrint(PlayerName, MonsterName, PlayerAtt);
         if (MonsterHp == 0)
         {
+            std::cout << "몬스터가 쓰러졌다" << std::endl;
             return 0;
         }
-
+        
 
 
         _getch();
@@ -121,9 +146,10 @@ int main()
         DamagePrint(MonsterName, PlayerName, MonsterAtt);
         if (PlayerHp == 0)
         {
+            std::cout << "플레이어가 쓰러졌다" << std::endl;
             return 0;
         }
-
+        
 
 
         _getch();
