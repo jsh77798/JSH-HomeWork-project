@@ -3,9 +3,77 @@
 
 #include <iostream>
 
+class Test
+{
+
+public:
+    // 100
+    int A;
+    // ?????
+    __int64 B;
+    char C;
+    char D;
+    short E; // 2바이트 정수입니다.
+    int F;
+};
+
+
+// 1 2 4 8
+
+class Player
+{
+public:
+    int HP = 100;
+    int ATT = 20;
+};
+
+//  [H][H][H][H][A][A][A][A] //  [A][A][A][A][][][][]
+void TestFunction(Player _Newplayer, int _Test)
+{
+    // 이것도 확인해보세요.
+    __int64 AddressG = (__int64)&_Newplayer.HP;
+    __int64 AddressH = (__int64)&_Newplayer.ATT;
+    __int64 AddressI = (__int64)&_Test;
+    
+    std::cout << "2번 문제" << '\n';
+    std::cout << "G(int)     = " << AddressG << std::endl;
+    std::cout << "H(int)     = " << AddressH << std::endl;
+    std::cout << "I(int)     = " << AddressI << std::endl;
+}
+
 int main()
 {
-    std::cout << "Hello World!\n";
+    size_t Size = sizeof(Test);
+    // [A][A][A][A][][][][] [B][B][B][B][B][B][B][B] [C][D][E][E][F][F][F][F]
+
+    Test NewTest;
+    __int64 AddressA = (__int64)&NewTest.A;
+    __int64 AddressB = (__int64)&NewTest.B;
+    __int64 AddressC = (__int64)&NewTest.C;
+    __int64 AddressD = (__int64)&NewTest.D;
+    __int64 AddressE = (__int64)&NewTest.E;
+    __int64 AddressF = (__int64)&NewTest.F;
+
+
+   
+    std::cout << "1번 문제" << '\n';
+
+    std::cout<<"바이트:" << Size << '\n' << std::endl;
+
+    std::cout <<"A(int)      = " << AddressA << std::endl;
+    std::cout <<"B(__int64)  = " << AddressB << std::endl;
+    std::cout <<"C(char)     = " << AddressC << std::endl;
+    std::cout <<"D(char)     = " << AddressD << std::endl;
+    std::cout <<"E(short)    = " << AddressE << std::endl;
+    std::cout <<"F(int)      = " << AddressF <<'\n'<< std::endl;
+
+
+
+    Player NewPlayer;
+    TestFunction(NewPlayer, 20);
+
+
+    
 }
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
