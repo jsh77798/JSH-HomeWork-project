@@ -26,43 +26,37 @@ class Player
 // 한명이 죽으면 끝납니다.
 // 지금 그걸 그래픽으로 표현할 방법이 없으니까.
 // 글자로 표현하겠습니다.
-void PrintLine(const char* line, int maxLength)
+int StringCount(const char* const __Name)
 {
-    int lineLength = 0;
-    while (line[lineLength] != '\0')
-        ++lineLength;
+    int ChCount = 0;
 
-    if (lineLength <= maxLength)
+    while (__Name[ChCount])
     {
-        printf("%s", line);
-        for (int i = 0; i < maxLength - lineLength; ++i)
-            printf(" ");
-        printf("\n");
+        ++ChCount;
     }
-    else
-    {
-        for (int i = 0; i < maxLength; ++i)
-            printf("%c", line[i]);
-        printf("\n");
-    }
+
+    return ChCount;
 }
 
 void StatusRender(const char* const _Name, int _Att, int _Hp)
 {
-    // 40개로 맞춰오세요.
-
+    // 40개로 맞춰오세요
     // 줄바꿈이 안되고 있습니다.
+    int Count = StringCount(_Name);
 
-    const char separator[] = "----------------------------------------";
-    int maxLength = sizeof(separator) - 1;
-
-    PrintLine(_Name, maxLength);
-    printf("%s\n", separator);
-    printf("공격력 : %d\n", _Att);
-    printf("체  력 : %d\n", _Hp);
-    printf("%s\n", separator);
-    printf("\n");
-    
+    printf_s("%s", _Name);
+    for (size_t i = 0; i < 40 - Count; i++)
+    {
+        printf_s("-");   
+    }
+    printf_s("\n");
+    printf_s("공격력 : %d\n", _Att);
+    printf_s("체  력 : %d\n", _Hp);
+    for (size_t i = 0; i < 40; i++)
+    {
+        printf_s("-");
+    }
+    printf_s("\n");
 }
 
 void DamagePrint(const char* const _AttName, const char* const _DefName, int _Att)
@@ -92,11 +86,11 @@ int main()
 
     int PlayerHp = 100;
     int PlayerAtt = 25;
-    char PlayerName[] = "Player";
+    char PlayerName[40] = "Player";
 
     int MonsterHp = 100;
     int MonsterAtt = 10;
-    char MonsterName[] = "Monster";
+    char MonsterName[40] = "Monster";
 
     while (true)
     {
