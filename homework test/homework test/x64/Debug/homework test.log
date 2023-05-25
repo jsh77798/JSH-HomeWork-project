@@ -1,2 +1,3 @@
 ﻿  homework test.cpp
-  homework test.vcxproj -> C:\Project homework\JSH-HomeWork-project\homework test\x64\Debug\homework test.exe
+C:\Project homework\JSH-HomeWork-project\homework test\homework test\homework test.cpp(12,53): error C2440: '=': 'char'에서 'char *'(으)로 변환할 수 없습니다.
+C:\Project homework\JSH-HomeWork-project\homework test\homework test\homework test.cpp(12,53): message : 정수 계열 형식에서 포인터 형식으로 변환하려면 reinterpret_cast, C 스타일 캐스트 또는 괄호가 있는 함수 스타일 캐스트가 필요합니다.

@@ -19,7 +19,9 @@ public:
     int Z = 0;
     int W = 1;
 
-    void operator=(const int4& _Other)
+
+    //int4 클래스의 연산자를 활용하기 위해선 연산자를 클래스 안에서 설정해줘야한다
+    void operator=(const int4& _Other)//  = 연산자 설정
     {
         X = _Other.X;
         Y = _Other.Y;
@@ -27,7 +29,7 @@ public:
         W = _Other.W;
     }
 
-    void operator+=(const int4& _Other)
+    void operator+=(const int4& _Other)//  += 연산자 설정
     {
         X += _Other.X;
         Y += _Other.Y;
@@ -64,10 +66,6 @@ public:
 
     void SetPixel(const int4& _Pos, char _Ch)
     {
-       
-
-
-
 
         ArrScreen[_Pos.Y][_Pos.X] = _Ch;
     }
@@ -229,6 +227,18 @@ int main()
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
 // 프로그램 디버그: <F5> 키 또는 [디버그] > [디버깅 시작] 메뉴
