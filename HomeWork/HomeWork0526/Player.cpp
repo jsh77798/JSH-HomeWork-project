@@ -1,5 +1,6 @@
 #include "Player.h"
 
+
 void Player::Input(ConsoleScreen* _Screen)
 {
     char Select = (char)_getch();

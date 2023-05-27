@@ -2,6 +2,7 @@
 #include <iostream>
 #include <conio.h>
 
+
 class int4
 {
 public:

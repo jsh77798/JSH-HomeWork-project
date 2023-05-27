@@ -1,7 +1,7 @@
 #pragma once
 #include "int4.h"
 
-class Player;
+
 class ConsoleScreen
 {
 public:
