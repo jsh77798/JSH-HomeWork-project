@@ -3,6 +3,7 @@
 class FightZone;
 class Player;
 
+
 class Monster
 {
 	// c++에서는 함수에도 그걸 만든 프로그래머의 의도를 부여할수가 있습니다.
