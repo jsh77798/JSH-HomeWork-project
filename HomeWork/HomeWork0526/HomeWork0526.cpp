@@ -15,10 +15,6 @@
 
 // 숙제 플레이어가 화면 바깥으로 나가지 못하게 해라.
 
-#include <iostream>
-#include <conio.h>
-#include <Windows.h>
-
 #include "int4.h"
 #include "ConsoleScreen.h"
 #include "Player.h"
