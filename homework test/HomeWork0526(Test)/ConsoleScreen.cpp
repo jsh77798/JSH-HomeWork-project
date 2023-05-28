@@ -1,3 +1,6 @@
+
+// * #include "ConsoleScreen.h" 는 ConsoleScreen.h(헤더)의 코드가 그대로 복사붙여 지는 것이다. (ConsoleScreen.h코드에 있는 
+//   #include "int4.h" 또한 포함되 복붙된다.즉 ConsoleScreen.h에 있는 모든 코드가 복사된다.)
 #include "ConsoleScreen.h"
 
 

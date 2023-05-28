@@ -44,7 +44,7 @@ int main()
         Screen.SetPixel(MainPlayer.GetPos(), 'a');
 
 
-        for (size_t i = 0; i < 5; i++)
+        for (size_t i = 0; i < 10; i++)
         {
             // int4 WallPos = PtrWall.GetPos();
             // int4 WallPos = ArrWall[i].GetPos();

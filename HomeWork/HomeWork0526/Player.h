@@ -5,7 +5,8 @@
 class Player
 {
 public:
-
+    void Shoot(ConsoleScreen* Screen);
+    
     int4 GetPos() const
     {
         return Pos;

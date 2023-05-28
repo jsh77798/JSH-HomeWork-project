@@ -5,6 +5,10 @@
 class ConsoleScreen
 {
 public:
+    char GetPixel(const int4& _Pos) const
+    {
+        return ArrScreen[_Pos.Y][_Pos.X];
+    }
 
     ConsoleScreen()
     {
