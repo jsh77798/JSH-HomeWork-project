@@ -17,8 +17,8 @@
 
 // 숙제1 => 템플릿으로 바꾸세요.
 
-using DataType = int;
-
+//using DataType = int;
+template<typename DataType>
 class HVector
 {
 public:
@@ -170,7 +170,7 @@ int main()
 
 	// 여기를 건들지 마세요.
 	{
-		HVector Arr;
+		HVector<int> Arr;
 		// 내부에 123
 		// Arr.reserve(10);
 		for (size_t i = 0; i < 10; i++)
@@ -186,7 +186,7 @@ int main()
 		}
 
 
-		HVector Arr0;
+		HVector<int> Arr0;
 
 		// 릭을 해결하는 순간 터질겁니다.
 		// 정상적인 복사가 이루어지게 하세요.
