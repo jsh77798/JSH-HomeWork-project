@@ -44,7 +44,6 @@
 //   #include <conio.h>또한 포함되 복붙된다.즉 int4.h에 있는 모든 코드가 복사된다.)
 #include "int4.h"
 
-
 class ConsoleScreen
 {
 public:

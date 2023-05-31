@@ -23,7 +23,6 @@
 #include "ConsoleScreen.h"
 #include "Player.h"
 
-
 int main()
 {
     ConsoleScreen Screen;

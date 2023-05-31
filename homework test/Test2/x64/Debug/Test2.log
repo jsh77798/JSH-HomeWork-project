@@ -1,0 +1,12 @@
+﻿  Test2.cpp
+C:\Project homework\JSH-HomeWork-project\homework test\Test2\Test2.cpp(186,18): warning C4267: '인수': 'size_t'에서 'const DataType'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              DataType=int
+          ]
+C:\Project homework\JSH-HomeWork-project\homework test\Test2\Test2.cpp(93,19): warning C4267: '=': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Project homework\JSH-HomeWork-project\homework test\Test2\Test2.cpp(77,7): message : 클래스 템플릿 멤버 함수 'void HVector<int>::reserve(size_t)'을(를) 컴파일하는 중입니다.
+C:\Project homework\JSH-HomeWork-project\homework test\Test2\Test2.cpp(70,11): message : 'HVector<int>::push_back'에서 'HVector<int>::reserve'에 대한 첫 번째 참조를 확인하세요.
+C:\Project homework\JSH-HomeWork-project\homework test\Test2\Test2.cpp(186,17): message : 'main'에서 'HVector<int>::push_back'에 대한 첫 번째 참조를 확인하세요.
+C:\Project homework\JSH-HomeWork-project\homework test\Test2\Test2.cpp(181,16): message : 컴파일되는 클래스 템플릿 인스턴스화 'HVector<int>'에 대한 참조를 확인하세요.
+  Test2.vcxproj -> C:\Project homework\JSH-HomeWork-project\homework test\x64\Debug\Test2.exe

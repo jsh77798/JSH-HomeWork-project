@@ -3,7 +3,6 @@
 //   #include "int4.h" 또한 포함되 복붙된다.즉 ConsoleScreen.h에 있는 모든 코드가 복사된다.)
 #include "ConsoleScreen.h"
 
-
 void ConsoleScreen::Clear()
 {
     system("cls");
