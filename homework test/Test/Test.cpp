@@ -6,13 +6,31 @@
 void myPrintf(int _ptr)
 {
     _ptr = 200;
-    std::cout << _ptr << std::endl;
+    std::cout <<"Arr= "<< _ptr << std::endl;
+}
+
+int Print(int A) 
+{
+    A = 100;
+    return A;
 }
 
 int main()
 {
-    int Arr = 20 ;
-    myPrintf(Arr);
-    
+    {
+        int Arr = 20;
+        myPrintf(Arr);
+    }
+
+    {
+        int Att = 10;
+        Att=Print(Att);
+
+        std::cout <<"Att= "<< Att << "Att= "<< Print(Att) <<std::endl;
+    }
+
+
+
+
 }
 
