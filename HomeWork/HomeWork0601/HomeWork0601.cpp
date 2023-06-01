@@ -197,9 +197,11 @@ int main()
 
 		StartIter = NewList.erase(StartIter);
 
+		std::cout << "push_back:\n";
+
 		for (; StartIter.operator!=(EndIter); ++StartIter)
 		{
-			// std::cout << (*StartIter) << std::endl;
+			std::cout  << (*StartIter) << std::endl;
 		}
 	}
 
@@ -235,8 +237,35 @@ int main()
 		for (; StartIter != EndIter; ++StartIter)
 		{
 			// 순회를 하면서 모든 인자를 도는 와중에 삭제를 합니다.
-			std::cout << (*StartIter) << std::endl;
+			//std::cout << (*StartIter) << std::endl;
 		}
 	}
 
+
+	{
+		std::vector<int> Test;
+
+		// 노드형 시퀀스 자료구조
+		std::list<int> NewList;
+
+		for (size_t i = 0; i < 10; i++)
+		{
+			// 리스트만 가지고 있는 함수인데.
+			NewList.push_front(i);
+		}
+
+		// NewList.erase()
+
+		std::list<int>::iterator StartIter = NewList.begin();
+		std::list<int>::iterator EndIter = NewList.end();
+
+		StartIter = NewList.erase(StartIter);
+
+		std::cout << "push_front:\n";
+
+		for (; StartIter.operator!=(EndIter); ++StartIter)
+		{
+			std::cout << (*StartIter) << std::endl;
+		}
+	}
 }
