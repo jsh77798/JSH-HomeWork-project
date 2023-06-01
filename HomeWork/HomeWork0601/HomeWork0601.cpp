@@ -100,6 +100,12 @@ public:
 
 		NewNode->Next = EndNode;
 		NewNode->Prev = PrevNode;
+
+		if (nullptr == NewNode)
+		{
+			delete NewNode;
+			NewNode = nullptr;
+		}
 	}
 
 	void push_front(const DataType& _Data)
@@ -114,6 +120,12 @@ public:
 
 		NewNode->Prev = StartNode;
 		NewNode->Next = PrevNode;
+
+		if (nullptr == NewNode)
+		{
+			delete NewNode;
+			NewNode = nullptr;
+		}
 	}
 
 	iterator erase(const iterator& _Iter)
