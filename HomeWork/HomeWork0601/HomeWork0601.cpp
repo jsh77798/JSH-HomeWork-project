@@ -87,6 +87,7 @@ public:
 		EndNode->Prev = StartNode;
 	}
 
+
 	// void Push_front를 만들어보세요.
 	void push_back(const DataType& _Data)
 	{
@@ -113,13 +114,13 @@ public:
 		ListNode* NewNode = new ListNode();
 		NewNode->Value = _Data;
 
-		ListNode* PrevNode = StartNode->Next;
+		ListNode* NextNode = StartNode->Next;
 
-		PrevNode->Prev = NewNode;
+		NextNode->Prev = NewNode;
 		StartNode->Next = NewNode;
 
 		NewNode->Prev = StartNode;
-		NewNode->Next = PrevNode;
+		NewNode->Next = NextNode;
 
 		if (nullptr == NewNode)
 		{
